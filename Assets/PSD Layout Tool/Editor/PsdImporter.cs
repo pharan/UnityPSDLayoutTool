@@ -1,4 +1,4 @@
-﻿namespace PsdLayoutTool
+namespace PsdLayoutTool
 {
     using System;
     using System.Collections.Generic;
@@ -782,7 +782,9 @@
                 GameObject gameObject = new GameObject("EventSystem");
                 gameObject.AddComponent<EventSystem>();
                 gameObject.AddComponent<StandaloneInputModule>();
+                #if !UNITY_5_4_OR_NEWER
                 gameObject.AddComponent<TouchInputModule>();
+                #endif
             }
         }
 
